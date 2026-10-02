@@ -17,3 +17,7 @@ The results do not indicate a relative disadvantage for submissions with 5% or m
 Taken cautiously, these findings suggest that increasing the proportion of NTOs need not be associated with a relative penalty in Outputs GPA. They do not establish that NTOs improve performance, nor do they identify an optimal submission percentage. The apparent 3–5% “sweet spot” is an exploratory observation only, and may reflect factors not represented in the chart.
 
 *Visualisation and description based on materials supplied by Simon Kerridge in June 2025*
+
+Suggested reference:
+
+  - Evidence on the relative performance of Not-Traditionally Submitted Outputs (NTOs) vs Traditional Outputs (TOs) in REF2021, Hidden REF (2026) https://github.com/HiddenREF/NTO-vs-TO-relative-scoring
