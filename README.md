@@ -20,4 +20,4 @@ Taken cautiously, these findings suggest that increasing the proportion of NTOs 
 
 Suggested reference:
 
-  - Evidence on the relative performance of Not-Traditionally Submitted Outputs (NTOs) vs Traditional Outputs (TOs) in REF2021, Hidden REF (2026) https://github.com/HiddenREF/NTO-vs-TO-relative-scoring
+  - The Hidden REF, *Evidence on the relative performance of Not-Traditionally Submitted Outputs (NTOs) vs Traditional Outputs (TOs) in REF2021* (2026) https://github.com/HiddenREF/NTO-vs-TO-relative-scoring
