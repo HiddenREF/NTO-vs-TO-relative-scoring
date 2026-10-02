@@ -1,6 +1,6 @@
 # Evidence on the relative performance of NTOs vs TOs in REF2021
 
-![GPA difference chart](/whether having _=5_ NTOs negatively affected GPA.png)
+![GPA difference chart](whether having _=5_ NTOs negatively affected GPA.png)
 
 This visualisation explores whether submitting a higher proportion of Not-Traditionally Submitted Outputs (NTOs) in REF2021 was associated changes to assessment outcomes. The work supports the aims of the [Hidden REF](https://hidden-ref.org/), which seeks to improve recognition for the full range of outputs and roles that contribute to excellent research.
 
