@@ -6,9 +6,7 @@ This visualisation explores whether submitting a higher proportion of Not-Tradit
 
 Each point represents a university REF submission. The horizontal axis shows the proportion of outputs submitted as NTOs, while the vertical axis shows the difference between the submission’s **Outputs GPA** and its **Overall GPA**:
 
-\[
-\text{GPA difference} = \text{Outputs GPA} - \text{Overall GPA}
-\]
+`GPA difference = Outputs GPA − Overall GPA`
 
 A positive value means that the Outputs GPA was higher than the Overall GPA; a negative value means it was lower.
 
