@@ -2,6 +2,8 @@
 
 ![GPA difference chart](nto-vs-to-gpa-diff.png)
 
+![GPA difference beeswarm_chart](beeswarm_diagram_5.png)
+
 This visualisation explores whether submitting a higher proportion of Not-Traditionally Submitted Outputs (NTOs) in REF2021 was associated changes to assessment outcomes. The work supports the aims of the [Hidden REF](https://hidden-ref.org/), which seeks to improve recognition for the full range of outputs and roles that contribute to excellent research.
 
 Each point represents a university REF submission. The horizontal axis shows the proportion of outputs submitted as NTOs, while the vertical axis shows the difference between the submission’s **Outputs GPA** and its **Overall GPA**:
