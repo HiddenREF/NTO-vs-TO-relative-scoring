@@ -18,7 +18,7 @@ The results do not indicate a relative disadvantage for submissions with 5% or m
 
 Taken cautiously, these findings suggest that increasing the proportion of NTOs need not be associated with a relative penalty in Outputs GPA. They do not establish that NTOs improve performance, nor do they identify an optimal submission percentage. The apparent 3–5% “sweet spot” is an exploratory observation only, and may reflect factors not represented in the chart.
 
-*Visualisation and description based on materials supplied by Simon Kerridge in June 2025*
+<!-- *Visualisation and description based on materials supplied by Simon Kerridge in June 2025*  -->
 
 Suggested reference:
 
@@ -26,11 +26,14 @@ Suggested reference:
 
 ### Files
 
-- `GPA_difference_scores.csv` – the underlying data (NTO percentage and GPA difference per submission)
-- `nto-vs-to-gpa-diff.png` – scatter plot of GPA difference against NTO percentage
+- `GPA_difference_scores.csv` – the underlying data (NTO percentage and GPA difference per submission, with some intermediate calculations)
+- `gpa_difference.png` – scatter plot of GPA difference against NTO percentage
 - `beeswarm_diagram_5.png` – beeswarm plot comparing submissions below and at or above 5% NTOs
-- `plot_beeswarm.py` – Python script that generates the beeswarm plot
+- `box_plot_5.png` - box plots GPA difference results for the two groups
+- `plot_beeswarm.py` – Python script that generates the beeswarm and the GPA difference plots
+- `get_gpa.py` - Python script calculating GPAs and the difference between Overall GPA and Outputs GPA
+- `statistical_analysis.py` - Python script testing the statistical significance of differences between the two groups
 
 #### Reproducing the beeswarm plot
 
-Requires `pandas`, `matplotlib`, and `seaborn`. Run `python plot_beeswarm.py` from the repository root. To use a different threshold (e.g. 3%), change `percentage` in the script; the output is saved as `beeswarm_diagram_<percentage>.png`.
+Requires `pandas`, `matplotlib`, `seaborn`, and `scipy.stats`. Run `python plot_beeswarm.py` from the repository root. To use a different threshold (e.g. 3%), change `percentage` in the script; the output is saved as `beeswarm_diagram_<percentage>.png`.
