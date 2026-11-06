@@ -8,7 +8,7 @@ Created on Fri Nov  6 13:34:56 2026
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy.stats import ttest_ind, mannwhitneyu, shapiro, levene
+from scipy.stats import ttest_ind, mannwhitneyu
 
 
 institution_gpa = pd.read_csv('gpa_difference_scores.csv')
@@ -104,4 +104,3 @@ print("Mann–Whitney p-value:", mann_whitney_result.pvalue)
 rank_biserial = (2 * mann_whitney_result.statistic) / (len(below_) * len(above_or_equal_)) - 1 
 print(f"Rank-biserial correlation = {rank_biserial:.3f} (Negative value suggests institutions with higher NTO percentage have higher GPAs)")
 print('(Rank-biserial correlation <0.1 shows (very-)small effect')
-
