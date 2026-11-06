@@ -1,6 +1,6 @@
 ## Evidence on the relative performance of Not-Traditionally Submitted Outputs (NTOs) vs Traditional Outputs (TOs) in REF2021
 
-![GPA difference chart](nto-vs-to-gpa-diff.png)
+![GPA difference chart](gpa_difference.png)
 
 ![GPA difference beeswarm_chart](beeswarm_diagram_5.png)
 
