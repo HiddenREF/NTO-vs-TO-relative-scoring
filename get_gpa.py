@@ -6,8 +6,6 @@ Created on Wed Nov  4 11:36:59 2026
 """
 
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 data_path = '../data/REF2021/'
 
@@ -39,46 +37,36 @@ results["GPA"] = (
 
 results_overall = results.loc[results["profile"].eq("Overall")].copy()
 
-results_overall["Weighted_GPA"] = results_overall["GPA"] * results_overall["fte_of_submitted_staff"]
+results_overall["weighted_GPA"] = results_overall["GPA"] * results_overall["fte_of_submitted_staff"]
 
 institution_gpa = results_overall.groupby(
         ["institution_code_ukprn", "institution"],
         as_index=False
     ).agg(
-        Submitted_FTE=("fte_of_submitted_staff", "sum"),
-        Weighted_GPA_Overall=("Weighted_GPA", "sum"),
+        submitted_FTE=("fte_of_submitted_staff", "sum"),
+        weighted_GPA_overall=("weighted_GPA", "sum"),
         #Number_of_Submissions=("unit_of_assessment_number", "count")
     )
 
-institution_gpa["Overall_GPA"] = institution_gpa["Weighted_GPA_Overall"] / institution_gpa["Submitted_FTE"]
-
-#institution_gpa = (
-#    institution_gpa
-#    .drop(columns="Weighted_GPA_Total")
-#    .sort_values(
-#        ["Overall_GPA", "Submitted_FTE"],
-#        ascending=[False, False]
-#    )
-#    .reset_index(drop=True)
-#)
+institution_gpa["overall_GPA"] = institution_gpa["weighted_GPA_overall"] / institution_gpa["submitted_FTE"]
 
 results_outputs = results.loc[results["profile"].eq("Outputs")].copy()
-results_outputs["Weighted_GPA"] = results_outputs["GPA"] * results_outputs["fte_of_submitted_staff"]
+results_outputs["weighted_GPA"] = results_outputs["GPA"] * results_outputs["fte_of_submitted_staff"]
 
 institution_gpa_outputs = results_outputs.groupby(
         ["institution_code_ukprn", "institution"],
         as_index=False
     ).agg(
-        Submitted_FTE=("fte_of_submitted_staff", "sum"),
-        Weighted_GPA_Outputs=("Weighted_GPA", "sum"),
+        submitted_FTE=("fte_of_submitted_staff", "sum"),
+        weighted_GPA_outputs=("weighted_GPA", "sum"),
         #Number_of_Submissions=("unit_of_assessment_number", "count")
     )
 
-institution_gpa_outputs["Outputs_GPA"] = institution_gpa_outputs["Weighted_GPA_Outputs"] / institution_gpa_outputs["Submitted_FTE"]
+institution_gpa_outputs["outputs_GPA"] = institution_gpa_outputs["weighted_GPA_outputs"] / institution_gpa_outputs["submitted_FTE"]
 
-institution_gpa = pd.merge(institution_gpa, institution_gpa_outputs, on=['institution_code_ukprn', 'institution', 'Submitted_FTE']) 
+institution_gpa = pd.merge(institution_gpa, institution_gpa_outputs, on=['institution_code_ukprn', 'institution', 'submitted_FTE']) 
 
-institution_gpa['GPA_difference'] =  institution_gpa['Outputs_GPA'] - institution_gpa['Overall_GPA']
+institution_gpa['GPA_difference'] =  institution_gpa['outputs_GPA'] - institution_gpa['overall_GPA']
 
 
 output_type_names = {
@@ -105,6 +93,8 @@ output_type_names = {
     "V": "Translation",
 }
 
+# Output types R and U are text-based, but not always considered NTOs. 
+# Their inclusion does not seem to affect the results.
 to_types = {'A', 'B', 'C', 'D', 'E'}#, 'R', 'U'}
 
 nto_types = set(output_type_names.keys()) - to_types
@@ -138,30 +128,8 @@ institution_nto = institution_nto.sort_values(
     ascending=[False, False]
 ).reset_index(drop=True)
 
-institution_gpa = pd.merge(institution_gpa, institution_nto, on=['institution_code_ukprn', 'institution']) 
+institution_gpa = pd.merge(institution_gpa, institution_nto, on=['institution_code_ukprn', 'institution'])
 
-institution_gpa.plot('nto_percentage', 'GPA_difference', kind='scatter')
+# Save the resulting dataset
+institution_gpa.to_csv('gpa_difference.csv')
 
-x_col = 'nto_percentage'
-y_col = 'GPA_difference'
-
-percentage = 5
-
-# Create the grouping category
-institution_gpa['NTO_Group'] = institution_gpa[x_col].apply(lambda x: f'Below {percentage}%' if x < percentage else f'{percentage}% or more')
-    
-# Plot
-plt.figure(figsize=(8, 6))
-sns.swarmplot(x='NTO_Group', y=y_col, data=institution_gpa, hue='NTO_Group', palette='Set2', legend=False)
-
-# Add horizontal line at 0 and label it
-plt.axhline(0, color='gray', linestyle='-', linewidth=1.2, alpha=0.8)
-plt.text(0.25, -0.015, 'No difference', fontsize=10, color='gray', va='bottom', ha='left')
-
-plt.title(f'GPA scores of institutions with less or more than {percentage}% NTO submissions')
-plt.xlabel('Percentage of NTO submissions')
-plt.ylabel('GPA difference')
-plt.ylim(-0.55, 0.55)
-plt.grid(axis='y', linestyle='--', alpha=0.5)
-#plt.savefig(f'beeswarm_diagram_{percentage}.png', dpi=300, bbox_inches='tight')
-plt.show()
