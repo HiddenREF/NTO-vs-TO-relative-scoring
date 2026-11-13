@@ -14,7 +14,7 @@ A positive value means that the Outputs GPA was higher than the Overall GPA; a n
 
 The second chart shows the same GPA difference as a beeswarm plot. It splits submissions into two groups, below 5% NTOs and 5% or more, so their spread can be compared directly.
 
-The results do not indicate a relative disadvantage for submissions with 5% or more NTOs (the threshold for the [Hidden REF's 5% Manifesto](https://hidden-ref.org/5-manifesto/)). The median GPA difference for this group was −0.01, compared with −0.04 for submissions with fewer than 5% NTOs. Using a 3% threshold, submissions with at least 3% NTOs had a median difference of +0.01, while those below 3% averaged −0.05.
+The results do not indicate a relative disadvantage for submissions with 5% or more NTOs (the threshold for the [Hidden REF's 5% Manifesto](https://hidden-ref.org/5-manifesto/)). The median GPA difference for this group was −0.01, compared with −0.04 for submissions with fewer than 5% NTOs. Using a 3% threshold, submissions with at least 3% NTOs had a median difference of +0.01, while those below 3% had −0.05.
 
 Taken cautiously, these findings suggest that increasing the proportion of NTOs need not be associated with a relative penalty in Outputs GPA. They do not establish that NTOs improve performance, nor do they identify an optimal submission percentage. The apparent 3–5% “sweet spot” is an exploratory observation only, and may reflect factors not represented in the chart.
 
