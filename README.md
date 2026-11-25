@@ -24,6 +24,9 @@ Suggested reference:
 
   - Wioleta Kijewska, James Baker, Simon Hettrick, Lyndsey Ballantyne, Michael Donnay, Gemma Derrick, Ben Thomas, and Ola Thomson, *Evidence on the relative performance of Not-Traditionally Submitted Outputs (NTOs) vs Traditional Outputs (TOs) in REF2021* (The Hidden REF, 2026) https://github.com/HiddenREF/NTO-vs-TO-relative-scoring
 
+## Licence
+Unless otherwise stated, all derived data, code, interactives, and documentation are © The Hidden REF and made available under a [CC0 1.0 Universal public domain](https://github.com/HiddenREF/NTO-vs-TO-relative-scoring/blob/main/LICENSE) dedication. REF 2021 data reproduced here is released under a [CC BY 4.0 International license](https://github.com/HiddenREF/NTO-vs-TO-relative-scoring/blob/main/LICENSE-DATA).
+
 ### Files
 
 - `GPA_difference_scores.csv` – the underlying data (NTO percentage and GPA difference per submission, with some intermediate calculations)
